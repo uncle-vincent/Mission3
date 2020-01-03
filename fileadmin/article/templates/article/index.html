@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>文章</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'article/global.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'article/style.css' %}">
+</head>
+<body>
+    <!--header-->
+    <div class="header">
+        <div class="hInner">
+
+        </div>
+    </div>
+    <!--nav-->
+    <div class="navWrap">
+        <div id="nav" class="navConWrap navBg clearfix">
+            <!--<div class="curBg" style="height: 33px; left: 193px"></div>-->
+            <span class="left navSepotator"></span>
+            <a href="/" class="navBtn left cur">首页</a>
+            <a href="/article" class="navBtn left cur">活动资讯</a>
+        </div>
+    </div>
+    <div class="clearfix main">
+        <div class="right rightside">
+            <div class="rightMain">
+                <h1> 最新文章 </h1>
+                {% if latest_article_list %}
+                    <ul>
+                    {% for article in latest_article_list %}
+                        <li><a href="{% url 'content' %}?art_id={{ article.id }}">{{ article.title }}</a></li>
+                    {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No articles are available.</p>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>

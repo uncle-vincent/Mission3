@@ -1,0 +1,8 @@
+/*.simditor {
+    width: 85%;
+    left: 170px;
+}*/
+.simditor .simditor-body {
+    overflow: scroll;
+    max-height: 500px;
+}
